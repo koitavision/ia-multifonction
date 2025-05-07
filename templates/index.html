@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>IA Multimodale V2</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IA Multimodale V2</h1>
+        <form method="post" enctype="multipart/form-data">
+            <textarea name="prompt" placeholder="Tapez votre demande ici..." required></textarea>
+            <select name="task">
+                <option value="text">Générer du texte</option>
+                <option value="image">Générer une image</option>
+                <option value="ppt">Générer un PowerPoint</option>
+            </select>
+            <input type="file" name="file">
+            <button type="submit">Envoyer</button>
+        </form>
+
+        {% if response %}
+        <div class="response">
+            <h2>Texte généré :</h2>
+            <p>{{ response }}</p>
+        </div>
+        {% endif %}
+
+        {% if image_url %}
+        <div class="image-result">
+            <h2>Image générée :</h2>
+            <img src="{{ image_url }}" alt="Image IA">
+        </div>
+        {% endif %}
+
+        {% if ppt_generated %}
+        <div class="ppt-download">
+            <h2>PowerPoint généré :</h2>
+            <a href="/download">Télécharger le fichier</a>
+        </div>
+        {% endif %}
+
+        {% if file_url %}
+        <div class="file-preview">
+            <h2>Fichier envoyé :</h2>
+            <img src="{{ file_url }}" alt="Fichier utilisateur" style="max-width: 100%;">
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

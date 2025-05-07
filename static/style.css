@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 30px;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+textarea, select, input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+img {
+    margin-top: 15px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+}
